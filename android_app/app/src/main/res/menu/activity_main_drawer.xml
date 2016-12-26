@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_reports"
+            android:icon="@drawable/report"
+            android:title="My Reports" />
+        <item
+            android:id="@+id/nav_monitor"
+            android:icon="@drawable/eye"
+            android:title="Monitor" />
+        <item
+            android:id="@+id/nav_diet"
+            android:icon="@drawable/apple"
+            android:title="Diet Data" />
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/hospital"
+            android:title="Find in Map" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
