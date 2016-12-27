@@ -3,39 +3,57 @@
 
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="9c0932e5c3b35896465033d366e78d13c3b59ae6">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7b03c8e1ceb6a36ba0044b630e5733e84eb339b8/classes.dex" />
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_29d760d69d8d75e31c4157bf3a19e187ebc7531d/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="7588ec306dc84af5bfb8836f839b01c7c2a53769">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a141e8b78045d1f408cac3f07037bbd78745402f/classes.dex" />
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.1_68fe4bb458974d84ac74005e522b2e019daa823b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/10.0.1/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-10.0.1_8b73facc99dfd8a08ed4f9b631856a1d3206bea8/classes.dex" />
+        sha1="f181d5a31cd7932576844c0c4add22822b56f120">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_8963b6d28459b292469969aa41525f79e9fe233e/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.1_59402b4a18035e4a8c246064d5ad28681db519f2/classes.dex" />
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_dc846c926f83b241473e4adff2ba119d6aaf592a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_21cf8d6601bc01a8a8560b997c700074db528ca5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.0.1_7e0f4d57f84653f5b16f34682ed0580e666d732d/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -44,43 +62,34 @@
         optimize="true"
         revision="25.0.1"
         sha1="369f9aa48a629b4e92557b37326f42dc3de796e4">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/MPAndroidChart-v3.0.1_acfe46d76a05c53204ac8ece29bcff4461515025/classes.dex" />
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/MPAndroidChart-v3.0.1_acfe46d76a05c53204ac8ece29bcff4461515025/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_b08b33f1fbd70ac4fe0b81a3c3b7be9dc9f827cf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="25438f55fc6d906a0e72f30b21487541430ede43">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_7c250c3b3b55352733a50ce51bea3abd3226aa80/classes.dex" />
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_6cba71fa85709480aa15642b2a591cc0f6d46b86/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.1_4af7dd3166cc62e07b9ecae8faac5cf5658959b1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.1_359ebc471866d70e56b8d0bceb8046e9536637cc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.1_885472ccc8f3c70065c5b4a24ba476be6aee68a6/classes.dex" />
+        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-10.0.1_c8a3f71ccfe270eb33ff7ff7d3d301881cb8f026/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -89,25 +98,7 @@
         optimize="true"
         revision="25.0.1"
         sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.1.0_6cbd51f08d05c73ca1c5da0a6dd3d0b8f7880e42/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_723496c847c237d76ebfce66a50f38cae5d8470c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_1feea8b4555e8e3564d41cd4d318833ab61a1795/classes.dex" />
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.1.0_6cbd51f08d05c73ca1c5da0a6dd3d0b8f7880e42/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -116,52 +107,25 @@
         optimize="true"
         revision="25.0.1"
         sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.1_1346611ddc14f50705fe01728bd8c04826319d81/classes.dex" />
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.1_1346611ddc14f50705fe01728bd8c04826319d81/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_94d90189d03abe958a574e4396745e2004b12ca8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.1_eec0cbc7f431ed2e5522e4c2e0b5053a30ddb0be/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_81b927e4bce27c004866448ac9e9bd0c60fbd807/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.1_c0909b711503646ba0cdc4214a162ba4a71cf1e5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-10.0.1_952d3329f9972c0b6561565a23f4285abf294e2a/classes.dex" />
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-10.0.1_f1d414c2a0b0dc5d6369d90b4b4596af909cc0c8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.1_e79c5b912310eb44178a1bdc9414d12f779ea266/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -170,16 +134,16 @@
         optimize="true"
         revision="25.0.1"
         sha1="afa06f539a4026c10b247386312aa67404b80a16">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/ormlite-android-4.48_ad1e11720aeea0133839f460a8c8f5977d46fdbd/classes.dex" />
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/ormlite-android-4.48_ad1e11720aeea0133839f460a8c8f5977d46fdbd/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/2.1.0/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/de.hdodenhof-circleimageview-2.1.0_8491484ff1867b32f9a6431dfd840fa839e8e392/classes.dex" />
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.1_bf3c5d31f4f227e86291fe4dc9d0dfd10953ffa3/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -188,16 +152,7 @@
         optimize="true"
         revision="25.0.1"
         sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.3.0_a4d126fe7709b0597eca08ec2e101a3ca655a2ab/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-10.0.1_9f470096d2846975faa7767eea9e3c925edb67d3/classes.dex" />
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.3.0_a4d126fe7709b0597eca08ec2e101a3ca655a2ab/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -206,34 +161,79 @@
         optimize="true"
         revision="25.0.1"
         sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.8.0_b20684cf384c332581c4aee9fffb4b5f9d42a89d/classes.dex" />
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.8.0_b20684cf384c332581c4aee9fffb4b5f9d42a89d/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.0.1_0f00bf9e5bc75de9ed435d3c01c4189b3fdcb176/classes.dex" />
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.1_707178e3016d7138cdf152e851a75d98cec283ef/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.1_4dbf6d0a64015c6751d9cf7a5a4ec079d6694534/classes.dex" />
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.1_dc985b582779647f0e33bc332d275caf43195560/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_ebc698bbf893345ef4671574c467bade72ef98cc/classes.dex" />
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.1_c5dfb5392e1ab1cdd3b07041cf74387f51d98bae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.1_9551f0d9d9a8f1686372ae7116b6a423aa832e1d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_64ea8cd78fae9f64d51590ca1669a01007d550c4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-10.0.1_5c9b263c5b74f18503c0db4e8605e215a31e2078/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/2.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/de.hdodenhof-circleimageview-2.1.0_69d413ad8cd6d2a7060930cddf8640c748390825/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="aee42a9bc0ecd406cc66d6612e9cc8f6f70357cf">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_7a8d2cff9c2538dc5d5ed2b7379d8ddc914f523d/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -242,16 +242,7 @@
         optimize="true"
         revision="25.0.1"
         sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.7_18395851f59fa698e94deb1435e57a3201207896/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_ff64e2b17838b164febf09a6f2fdd5ad9ab8e717/classes.dex" />
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.7_18395851f59fa698e94deb1435e57a3201207896/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -260,52 +251,52 @@
         optimize="true"
         revision="25.0.1"
         sha1="e579bd2905d0399af5029aaaf9817d5fa0ca88a5">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/ormlite-core-4.48_b748671a6ffe25dd0364576691e20910c42986dd/classes.dex" />
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/ormlite-core-4.48_b748671a6ffe25dd0364576691e20910c42986dd/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.1_dc28ef0607b52f2eb6d9abf1ed61e34a8caadcbd/classes.dex" />
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.1_8c66de8030075ec7dd4c0a5c363df75d6aaffb30/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.1_68c16a107db22dbb2ad0b898d031d742350dd860/classes.dex" />
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.1_fbdfae134c0f7a2b202cb04c866d7050f11bd5db/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.1_8ec286a7a4ad9beb68e5b71224aed22ae3955e18/classes.dex" />
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.1_f2b47f439ce020366f40c4ae52598571f15f9dcd/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.0.1/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="1108575c7dc7b7f5b378b3290ac90de81a9b8830">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-25.0.1_b640bd3087732797f90b340f324065fa06536988/classes.dex" />
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_86e6b552df78170d6906627a840f7f87a63704b0/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_806636f10d0701fab92dc268ba8b426bb4a05ebf/classes.dex" />
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_5cf2c46ee8ea362b6f8293f3e77b095b7f33f08b/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -314,16 +305,25 @@
         optimize="true"
         revision="25.0.1"
         sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.1.0_3b3479fe4f6394b9dc9c8cf5d463df2b8c8d5a4f/classes.dex" />
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.1.0_3b3479fe4f6394b9dc9c8cf5d463df2b8c8d5a4f/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.1_279cfcedcd20e4a99ac97b516037f8c42c237f7a/classes.dex" />
+        sha1="1108575c7dc7b7f5b378b3290ac90de81a9b8830">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-25.0.1_d48fe24de045aed08c8bc88d0846dff0b3962c71/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.1_49d30eca59b2de70cfb9720705df03906d8c3859/classes.dex" />
     </item>
 
 </items>
