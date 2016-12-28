@@ -1,6 +1,9 @@
 package com.dhananjay.erudite;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+
+import java.io.FileOutputStream;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -67,7 +72,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onResponse(Call<Result> call, Response<Result> response) {
         Result result=response.body();
-        Log.d(TAG, "onResponse: "+result.success+" "+result.message);
+        Log.d(TAG, "onResponse: success:"+result.success+" result"+result.message);
+        if(result.success.equals(String.valueOf(1))){
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("logged_in",true);
+            editor.commit();
+            Toast.makeText(this, "logged in", Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+        }
 
     }
 

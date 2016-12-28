@@ -16,4 +16,15 @@ public interface API {
             @Field("password") String password
     );
 
+    @FormUrlEncoded()
+    @POST("request.php")
+    Call<Result> signUpRequest(
+            @Field("request_code") int requestCode,
+            @Field("name") String name,
+            @Field("user_name") String user_name,
+            @Field("password") String password,
+            @Field("phone") String phone,
+            @Field("public_key") String public_key
+    );
+
 }
