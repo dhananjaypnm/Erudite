@@ -5,11 +5,16 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.dhananjay.erudite.DatabaseHelper;
+import com.dhananjay.erudite.MainActivity;
 import com.dhananjay.erudite.R;
+import com.dhananjay.erudite.VitalSignsReading;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.LimitLine;
@@ -19,7 +24,10 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.j256.ormlite.android.apptools.OpenHelperManager;
+import com.j256.ormlite.dao.Dao;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +35,11 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class SugarLevelFragment extends Fragment {
+
+    DatabaseHelper helper;
+    Dao<VitalSignsReading,Long> dao;
+    int type=1;
+    List<VitalSignsReading> vitalSignsReadingList;
 
 
     public SugarLevelFragment() {
@@ -44,6 +57,23 @@ public class SugarLevelFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        try {
+            helper= OpenHelperManager.getHelper(getContext(),DatabaseHelper.class);
+            dao=helper.getDao();
+            vitalSignsReadingList=dao.queryForEq("type",type);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
+        RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.sugar_level_recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        VitalSignsReadingsRecyclerAdapter adapter=new VitalSignsReadingsRecyclerAdapter(getContext(),vitalSignsReadingList);
+        recyclerView.setAdapter(adapter);
+/*
         LineChart chart = (LineChart)view.findViewById(R.id.chart);
         List<Entry> entries = new ArrayList<>();
         entries.add(new Entry(2,3));
@@ -90,5 +120,6 @@ public class SugarLevelFragment extends Fragment {
 
         chart.animateXY(3000, 3000);
         chart.invalidate();
+        */
     }
 }

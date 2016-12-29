@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button button_login;
     String userName="",password="";
     private static final String TAG="LoginActivity";
-    private static final String BASE_URL="http://192.168.1.100/";
+    private static final String BASE_URL="http://1bae0161.ngrok.io/";
     Retrofit retrofit;
 
     @Override
@@ -60,7 +60,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        userName=user_name_login.getText().toString();
+
+
+         userName=user_name_login.getText().toString();
         password=password_login.getText().toString();
         API api=retrofit.create(API.class);
         Call<Result> call =api.loginAuth(2,userName,password);
