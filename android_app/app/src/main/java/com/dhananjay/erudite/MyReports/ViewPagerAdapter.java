@@ -9,17 +9,21 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     String[] tabs={"Sugar Level","Blood Pressure","Pulse Rate","Temperature"};
 
-    public ViewPagerAdapter(FragmentManager fm) {
+    public ViewPagerAdapter(FragmentManager fm,int flag) {
         super(fm);
     }
 
     @Override
     public Fragment getItem(int position) {
         switch (position){
-            case 0:return new SugarLevelFragment();
-            case 1:return new BloodPressureFragment();
-            case 2:return new PulseRateFragment();
-            case 3:return new TemperatureFragment();
+            case 0:
+                return new SugarLevelFragment();
+            case 1:
+                return new BloodPressureFragment();
+            case 2:
+                return new PulseRateFragment();
+            case 3:
+                return new TemperatureFragment();
         }
         return new SugarLevelFragment();
     }

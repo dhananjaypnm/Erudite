@@ -85,28 +85,7 @@ public class SyncFragment extends Fragment implements View.OnClickListener, Call
 
         buttonSync.setOnClickListener(this);
 
-        Gson gson=new Gson();
-        retrofit= new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
 
-        try {
-            helper= OpenHelperManager.getHelper(getContext(),DatabaseHelper.class);
-            dao=helper.getDao();
-            vitalSignsReadingList=dao.queryForEq("syncedWithServer",0);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
-        publicKeyString=prefs.getString("public_key","not available");
-
-        try {
-            publicKey=loadPublicKey(publicKeyString);
-        } catch (GeneralSecurityException e) {
-            e.printStackTrace();
-        }
 
 
     }
@@ -127,6 +106,36 @@ public class SyncFragment extends Fragment implements View.OnClickListener, Call
     @Override
     public void onClick(View view) {
 
+
+        Gson gson=new Gson();
+        retrofit= new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+
+        try {
+            helper= OpenHelperManager.getHelper(getContext(),DatabaseHelper.class);
+            dao=helper.getDao();
+            vitalSignsReadingList=dao.queryForEq("syncedWithServer",0);
+            Toast.makeText(getContext(), ""+vitalSignsReadingList.size(), Toast.LENGTH_SHORT).show();
+            if(vitalSignsReadingList.size()==0){
+                progressBarSync.setVisibility(View.GONE);
+                Toast.makeText(getContext(), "already synced", Toast.LENGTH_SHORT).show();
+            }
+            Log.d(TAG, "onClick: list size: "+vitalSignsReadingList.size());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+        publicKeyString=prefs.getString("public_key","not available");
+
+        try {
+            publicKey=loadPublicKey(publicKeyString);
+        } catch (GeneralSecurityException e) {
+            e.printStackTrace();
+        }
+
         progressBarSync.setVisibility(View.VISIBLE);
 
 
@@ -145,6 +154,9 @@ public class SyncFragment extends Fragment implements View.OnClickListener, Call
 
                 double reading=readingitem.getValue();
                 String readingString=String.valueOf(reading);
+
+
+
 
                 encodedBytes = c1.doFinal(readingString.getBytes());
                 encoded= Base64.encodeToString(encodedBytes, Base64.DEFAULT);
@@ -179,9 +191,11 @@ public class SyncFragment extends Fragment implements View.OnClickListener, Call
 
     }
 
+
+
     @Override
     public void onResponse(Call<Result> call, Response<Result> response) {
-
+        progressBarSync.setVisibility(View.GONE);
         Result result=response.body();
         if(result!=null){
 
@@ -203,6 +217,6 @@ public class SyncFragment extends Fragment implements View.OnClickListener, Call
     public void onFailure(Call<Result> call, Throwable t) {
         progressBarSync.setVisibility(View.GONE);
         Toast.makeText(getContext(), "failed to sync", Toast.LENGTH_SHORT).show();
-        Log.d(TAG, "onFailure: ");
+        Log.d(TAG, "onFailure: "+t);
     }
 }

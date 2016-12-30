@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/vitals_tab_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#999999"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vitals_view_pager2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

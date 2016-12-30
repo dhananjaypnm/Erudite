@@ -90,6 +90,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onFailure(Call<Result> call, Throwable t) {
         Log.d(TAG, "onFailure: failed"+t);
-        Toast.makeText(this,"Failed! Make sure you have proper internet connection",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"Failed!"+t,Toast.LENGTH_LONG).show();
     }
 }

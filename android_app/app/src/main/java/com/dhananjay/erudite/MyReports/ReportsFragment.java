@@ -32,7 +32,7 @@ public class ReportsFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ViewPager viewPager = (ViewPager)view. findViewById(R.id.vitals_view_pager);
-        viewPager.setAdapter(new ViewPagerAdapter(getFragmentManager()));
+        viewPager.setAdapter(new ViewPagerAdapter(getFragmentManager(),0));
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.vitals_tab_layout);
         tabLayout.setupWithViewPager(viewPager);
     }

@@ -1,7 +1,10 @@
 package com.dhananjay.erudite.MyReports;
 
 
+import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,6 +20,7 @@ import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,12 +32,16 @@ public class PulseRateFragment extends Fragment {
     Dao<VitalSignsReading,Long> dao;
     int type=3;
     List<VitalSignsReading> vitalSignsReadingList;
-
+    int flag=0;
 
     public PulseRateFragment() {
         // Required empty public constructor
     }
 
+    @SuppressLint("ValidFragment")
+    public PulseRateFragment(int flag){
+        this.flag=flag;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,7 +57,11 @@ public class PulseRateFragment extends Fragment {
         try {
             helper= OpenHelperManager.getHelper(getContext(),DatabaseHelper.class);
             dao=helper.getDao();
-            vitalSignsReadingList=dao.queryForAll();
+
+                vitalSignsReadingList=dao.queryForEq("type",type);
+
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -18,23 +18,21 @@
             android:id="@+id/nav_map"
             android:icon="@drawable/hospital"
             android:title="Find in Map" />
+
+        <item
+            android:id="@+id/nav_receive_from_modules"
+            android:icon="@drawable/ear"
+            android:title="Receive from Modules" />
+        <item
+            android:id="@+id/nav_sync"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Sync" />
         <item
             android:id="@+id/nav_sign_out"
             android:icon="@drawable/app_icon_2"
             android:title="Sign Out" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_receive_from_modules"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Receive from Modules" />
-            <item
-                android:id="@+id/nav_sync"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Sync" />
-        </menu>
-    </item>
+
 
 </menu>

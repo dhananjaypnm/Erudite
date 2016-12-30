@@ -1,12 +1,16 @@
 package com.dhananjay.erudite.MyReports;
 
 
+import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,12 +44,11 @@ public class SugarLevelFragment extends Fragment {
     Dao<VitalSignsReading,Long> dao;
     int type=1;
     List<VitalSignsReading> vitalSignsReadingList;
-
+int flag=0;
 
     public SugarLevelFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,12 +64,18 @@ public class SugarLevelFragment extends Fragment {
         try {
             helper= OpenHelperManager.getHelper(getContext(),DatabaseHelper.class);
             dao=helper.getDao();
-            vitalSignsReadingList=dao.queryForEq("type",type);
+
+                vitalSignsReadingList=dao.queryForEq("type",type);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
+        try {
+            List<VitalSignsReading> reading=dao.queryForAll();
+            for(int i=0;i<reading.size();i++)
+                Log.d("lol", "onViewCreated: "+i+" "+reading.get(i).getType());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.sugar_level_recycler_view);
         recyclerView.setHasFixedSize(true);

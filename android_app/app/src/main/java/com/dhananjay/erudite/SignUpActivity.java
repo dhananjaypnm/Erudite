@@ -105,6 +105,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             decoded=new String(decodedBytes);
             Log.d(TAG, "crypto: decoded "+decoded);
 
+
+
         }catch (Exception e){
             Log.d(TAG, "crypto: "+e);
         }
@@ -116,6 +118,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         password=password_sign_up.getText().toString();
         retypePassword=retype_password_sign_up.getText().toString();
         phone=phone_sign_up.getText().toString();
+
+
+
         if(password.equals(retypePassword)){
             API api=retrofit.create(API.class);
             Call<Result> call =api.signUpRequest(1,name,userName,password,phone,pubKey,privKey);
@@ -180,10 +185,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         Result result=response.body();
         if(result!=null){
 
+
+
             Log.d(TAG, "onResponse: success:"+result.success+" result:"+result.message);
             if(result.success.equals(String.valueOf(1))){
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("user_id",userName);
                 editor.putBoolean("logged_in",true);
                 editor.putString("public_key",pubKey);
                 editor.putString("private_key",privKey);

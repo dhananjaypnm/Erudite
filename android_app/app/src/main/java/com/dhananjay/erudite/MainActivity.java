@@ -13,9 +13,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.dhananjay.erudite.Map.GMapFragment;
+import com.dhananjay.erudite.MyReports.MonitorFragment;
+import com.dhananjay.erudite.MyReports.MonitorReportFragment;
 import com.dhananjay.erudite.MyReports.ReportsFragment;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
@@ -40,6 +43,10 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        Log.d(TAG, "onCreate: "+prefs.getString("public_key","lala"));
+
+        userId=prefs.getString("user_id","lala");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -61,26 +68,128 @@ public class MainActivity extends AppCompatActivity
             helper= OpenHelperManager.getHelper(MainActivity.this,DatabaseHelper.class);
             dao=helper.getDao();
 
+            int count=0;
             for(int i=0;i<10;i++){
                 vitalSignsReadingList.add(new VitalSignsReading(userId,time,50.5,1,0,0));
-                VitalSignsReading reading= dao.createIfNotExists(vitalSignsReadingList.get(i));
+
+                List<VitalSignsReading> list=new ArrayList<>();
+                list=dao.queryForEq("recordedTimestamp",time);
+                if(list.size()==0){
+                   int id= dao.create(vitalSignsReadingList.get(i));
+                    Log.d(TAG, "onCreate:inserted id = "+id);
+                    Log.d(TAG, "onCreate: "+count+++" "+i +" "+1);
+                }else{
+                    Log.d(TAG, "onCreate:1 list size"+list.size());
+                }
+
                 time=time-86400;
             }
+            time+=86400*10+1;
             for(int i=10;i<20;i++){
                 vitalSignsReadingList.add(new VitalSignsReading(userId,time,50.5,2,0,0));
-                VitalSignsReading reading= dao.createIfNotExists(vitalSignsReadingList.get(i));
+
+                List<VitalSignsReading> list=new ArrayList<>();
+                list=dao.queryForEq("recordedTimestamp",time);
+                if(list.size()==0){
+                    int id= dao.create(vitalSignsReadingList.get(i));
+                    Log.d(TAG, "onCreate:inserted id = "+id);
+                    Log.d(TAG, "onCreate: "+count+++" "+i+" "+2);
+
+                }else{
+                    Log.d(TAG, "onCreate:2 list size"+list.size());
+                }
                 time=time-86400;
             }
+            time=time+86400*10+1;
             for(int i=20;i<30;i++){
                 vitalSignsReadingList.add(new VitalSignsReading(userId,time,50.5,3,0,0));
-                VitalSignsReading reading= dao.createIfNotExists(vitalSignsReadingList.get(i));
+
+                List<VitalSignsReading> list=new ArrayList<>();
+                list=dao.queryForEq("recordedTimestamp",time);
+                if(list.size()==0){
+                    int id= dao.create(vitalSignsReadingList.get(i));
+                    Log.d(TAG, "onCreate:inserted id = "+id);
+                    Log.d(TAG, "onCreate: "+count+++" "+i+" "+3);
+
+                }else{
+                    Log.d(TAG, "onCreate:3 list size"+list.size());
+                }
                 time=time-86400;
             }
+            time=time+86400*10+1;
             for(int i=30;i<40;i++){
                 vitalSignsReadingList.add(new VitalSignsReading(userId,time,50.5,4,0,0));
-                VitalSignsReading reading= dao.createIfNotExists(vitalSignsReadingList.get(i));
+
+                List<VitalSignsReading> list=new ArrayList<>();
+                list=dao.queryForEq("recordedTimestamp",time);
+                if(list.size()==0){
+                    int id= dao.create(vitalSignsReadingList.get(i));
+                    Log.d(TAG, "onCreate:inserted id = "+id);
+                    Log.d(TAG, "onCreate: "+count+++" "+i+" "+4);
+
+                }else{
+                    Log.d(TAG, "onCreate:4 list size"+list.size());
+                }
                 time=time-86400;
             }
+            time=time+86400*10+1;
+            for(int i=40;i<50;i++){
+                vitalSignsReadingList.add(new VitalSignsReading("notme",time,50.5,1,0,0));
+
+                List<VitalSignsReading> list=new ArrayList<>();
+                list=dao.queryForEq("recordedTimestamp",time);
+                if(list.size()==0){
+                    int id= dao.create(vitalSignsReadingList.get(i));
+                    Log.d(TAG, "onCreate:inserted id = "+id);
+                    Log.d(TAG, "onCreate: "+count+++" "+i +" "+1);
+
+                }
+                time=time-86400;
+            }
+            time+=86400*10+1;
+            for(int i=50;i<60;i++){
+                vitalSignsReadingList.add(new VitalSignsReading("notme",time,50.5,2,0,0));
+
+                List<VitalSignsReading> list=new ArrayList<>();
+                list=dao.queryForEq("recordedTimestamp",time);
+                if(list.size()==0){
+                    int id= dao.create(vitalSignsReadingList.get(i));
+                    Log.d(TAG, "onCreate:inserted id = "+id);
+                    Log.d(TAG, "onCreate: "+count+++" "+i+" "+2);
+
+                }
+                time=time-86400;
+            }
+            time=time+86400*10+1;
+            for(int i=60;i<70;i++){
+                vitalSignsReadingList.add(new VitalSignsReading("notme",time,50.5,3,0,0));
+
+                List<VitalSignsReading> list=new ArrayList<>();
+                list=dao.queryForEq("recordedTimestamp",time);
+                if(list.size()==0){
+                    int id= dao.create(vitalSignsReadingList.get(i));
+                    Log.d(TAG, "onCreate:inserted id = "+id);
+                    Log.d(TAG, "onCreate: "+count+++" "+i+" "+3);
+                }
+                time=time-86400;
+            }
+            time=time+86400*10+1;
+            for(int i=70;i<80;i++){
+                vitalSignsReadingList.add(new VitalSignsReading("notme",time,50.5,4,0,0));
+
+                List<VitalSignsReading> list=new ArrayList<>();
+                list=dao.queryForEq("recordedTimestamp",time);
+                if(list.size()==0){
+                    int id= dao.create(vitalSignsReadingList.get(i));
+                    Log.d(TAG, "onCreate:inserted id = ");
+                    Log.d(TAG, "onCreate: "+count+++" "+i+" "+4);
+
+                }
+                time=time-86400;
+            }
+
+            dao.queryForAll();
+
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -115,7 +224,11 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_monitor) {
 
-
+            MonitorFragment monitorFragment=new MonitorFragment();
+            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,monitorFragment);
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("Request Monitor");
 
         } else if (id == R.id.nav_diet) {
 
@@ -128,6 +241,13 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_receive_from_modules) {
             //listen
+            ReceiveFragment receiveFragment=new ReceiveFragment();
+            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,receiveFragment);
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("Receive from bluetooth");
+
+
 
         } else if (id == R.id.nav_sync) {
             //sync with server
@@ -156,5 +276,14 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    public void grantedPermission(View view) {
+        MonitorReportFragment monitorReportFragment=new MonitorReportFragment();
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container,monitorReportFragment);
+        fragmentTransaction.commit();
+        getSupportActionBar().setTitle("Monitor Reports");
+
+
+    }
 }
 //freepik.com

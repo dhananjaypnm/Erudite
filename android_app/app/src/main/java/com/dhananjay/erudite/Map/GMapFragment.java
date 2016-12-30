@@ -89,6 +89,9 @@ public class GMapFragment extends Fragment implements OnMapReadyCallback, Google
         else {
             buildGoogleApiClient();
             googleMap.setMyLocationEnabled(true);
+            googleMap.getUiSettings().setMapToolbarEnabled(true);
+            googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+            googleMap.getUiSettings().setCompassEnabled(true);
         }
     }
 
@@ -135,7 +138,7 @@ public class GMapFragment extends Fragment implements OnMapReadyCallback, Google
             currLocationMarker.remove();
         }
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-        CameraPosition target=CameraPosition.builder().target(latLng).zoom(11).build();
+        CameraPosition target=CameraPosition.builder().target(latLng).zoom(13).build();
         googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(target));
         getNearbyPlaces("hospital");
         Button hospitals= (Button) view.findViewById(R.id.hospitals);
@@ -201,7 +204,7 @@ public class GMapFragment extends Fragment implements OnMapReadyCallback, Google
                     Log.d("onResponse", "There is an error");
                     e.printStackTrace();
                 }
-                CameraPosition target=CameraPosition.builder().target(new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude())).zoom(11).build();
+                CameraPosition target=CameraPosition.builder().target(new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude())).zoom(13).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(target));
             }
 

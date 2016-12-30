@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context="com.dhananjay.erudite.MyReports.MonitorFragment">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:id="@+id/bedit_text_request_permission"
+        android:layout_height="wrap_content"
+        android:text="scan" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:id="@+id/button_request_permission"
+        android:layout_height="wrap_content"
+        android:text="Request Permission" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:onClick="grantedPermission"
+        android:id="@+id/button_permission_granted"
+        android:layout_height="wrap_content"
+        android:text="Granted Permissions" />
+
+
+
+
+</LinearLayout>

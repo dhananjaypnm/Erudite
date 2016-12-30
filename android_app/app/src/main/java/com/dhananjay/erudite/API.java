@@ -40,5 +40,12 @@ public interface API {
             @Field("sync_timestamp") long syncTimestamp
 
     );
+    @FormUrlEncoded()
+    @POST("request.php")
+    Call<Result> monitorRequest(
+            @Field("request_code") int requestCode,
+            @Field("requester_user_id") String requesterUserId,
+            @Field("requested_user_id") String requested
+    );
 
 }
