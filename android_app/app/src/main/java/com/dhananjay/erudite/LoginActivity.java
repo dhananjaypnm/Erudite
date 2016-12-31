@@ -23,20 +23,23 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener, Callback<Result> {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener, Callback<LoginResult> {
 
     EditText user_name_login,password_login;
     TextView sign_up_login;
     Button button_login;
     String userName="",password="";
     private static final String TAG="LoginActivity";
-    private static final String BASE_URL="http://1bae0161.ngrok.io/";
+    private static  String BASE_URL;
     Retrofit retrofit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        BASE_URL=getResources().getString(R.string.baseurl);
+
 
         Gson gson=new Gson();
         retrofit= new Retrofit.Builder()
@@ -65,20 +68,26 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
          userName=user_name_login.getText().toString();
         password=password_login.getText().toString();
         API api=retrofit.create(API.class);
-        Call<Result> call =api.loginAuth(2,userName,password);
+        Call<LoginResult> call =api.loginAuth(2,userName,password);
         call.enqueue(this);
 
 
     }
 
     @Override
-    public void onResponse(Call<Result> call, Response<Result> response) {
-        Result result=response.body();
-        Log.d(TAG, "onResponse: success:"+result.success+" result"+result.message);
-        if(result.success.equals(String.valueOf(1))){
+    public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
+        LoginResult loginResult=response.body();
+        String pubKey=loginResult.keys.publicKey;
+        String privKey=loginResult.keys.privateKey;
+
+        Log.d(TAG, "onResponse: success:"+loginResult.success+" result "+loginResult.message);
+        if(loginResult.success.equals(String.valueOf(1))){
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             SharedPreferences.Editor editor = prefs.edit();
             editor.putBoolean("logged_in",true);
+            editor.putString("user_id",userName);
+            editor.putString("public_key",pubKey);
+            editor.putString("private_key",privKey);
             editor.commit();
             Toast.makeText(this, "logged in", Toast.LENGTH_SHORT).show();
             Intent intent=new Intent(getApplicationContext(),MainActivity.class);
@@ -88,7 +97,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     @Override
-    public void onFailure(Call<Result> call, Throwable t) {
+    public void onFailure(Call<LoginResult> call, Throwable t) {
         Log.d(TAG, "onFailure: failed"+t);
         Toast.makeText(this,"Failed!"+t,Toast.LENGTH_LONG).show();
     }

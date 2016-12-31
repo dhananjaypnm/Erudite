@@ -12,7 +12,7 @@ public class VitalSignsReading {
     public VitalSignsReading(){}
 
 
-    public VitalSignsReading(String userId, long recordedTimestamp, double value, int type, int syncedWithServer, long syncTime){
+    public VitalSignsReading(String userId, long recordedTimestamp, String value, int type, int syncedWithServer, long syncTime){
         this.userId=userId;
         this.recordedTimestamp=recordedTimestamp;
         this.value=value;
@@ -36,7 +36,7 @@ public class VitalSignsReading {
 
     @DatabaseField
     @SerializedName("value")
-    double value;
+    String value;
 
     @DatabaseField
     @SerializedName("type")
@@ -58,7 +58,7 @@ public class VitalSignsReading {
         return recordedTimestamp;
     }
 
-    public double getValue() {
+    public String getValue() {
         return value;
     }
 
@@ -72,6 +72,11 @@ public class VitalSignsReading {
 
     public long getSyncTime() {
         return syncTime;
+    }
+
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public void setSyncedWithServer(int syncedWithServer) {

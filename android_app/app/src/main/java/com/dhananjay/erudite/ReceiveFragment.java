@@ -93,13 +93,16 @@ public class ReceiveFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 Double val=0.0;
-                val=Double.parseDouble(values[0]);
+                val=Double.parseDouble(values[1]);
                 int type=1;
                 long currTime=System.currentTimeMillis()/1000;
-                VitalSignsReading vitalSignReading=new VitalSignsReading(userId,currTime,val,type,0,0);
+                VitalSignsReading vitalSignReading=new VitalSignsReading(userId,currTime,String.valueOf(val),type,0,0);
                 try {
+                    valueReceive.setText("Received value: "+val);
+
                     dao.createIfNotExists(vitalSignReading);
-                    Log.d(TAG, "onClick: reading added");
+                    Toast.makeText(getContext(), "Reading Added", Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "onClick: reading added "+vitalSignReading.value);
                     Log.d(TAG, "onClick: "+vitalSignReading.value);
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -248,7 +251,6 @@ public class ReceiveFragment extends Fragment implements View.OnClickListener {
                     String readMessage = new String(buffer, 0, bytes);
                     Log.d(TAG, "receiveData: "+readMessage);
                     values= readMessage.split("\\r?\\n");
-                    valueReceive.setText(" "+values[0]);
                 } catch (IOException e) {
                     break;
                 }

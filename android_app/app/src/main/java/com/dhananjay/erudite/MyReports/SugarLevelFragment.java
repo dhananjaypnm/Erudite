@@ -30,10 +30,13 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.QueryBuilder;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.http.Query;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,17 +68,14 @@ int flag=0;
             helper= OpenHelperManager.getHelper(getContext(),DatabaseHelper.class);
             dao=helper.getDao();
 
-                vitalSignsReadingList=dao.queryForEq("type",type);
+            QueryBuilder<VitalSignsReading,Long> queryBuilder=helper.getDao().queryBuilder();
+            queryBuilder.orderBy("recordedTimestamp",false);
+            queryBuilder.where().eq("type",type);
+            vitalSignsReadingList=queryBuilder.query();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        try {
-            List<VitalSignsReading> reading=dao.queryForAll();
-            for(int i=0;i<reading.size();i++)
-                Log.d("lol", "onViewCreated: "+i+" "+reading.get(i).getType());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
 
         RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.sugar_level_recycler_view);
         recyclerView.setHasFixedSize(true);

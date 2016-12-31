@@ -16,6 +16,8 @@ import com.j256.ormlite.dao.Dao;
  */
 public class HistoryFragment extends Fragment {
 
+
+
     DatabaseHelper helper;
     Dao<COReading,Long> dao;
 

@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dhananjay.erudite.MyReports.SugarLevelFragment">
+
+    <!-- comment
+    <com.github.mikephil.charting.charts.LineChart
+    android:id="@+id/chart"
+    android:layout_width="match_parent"
+    android:layout_height="300dp" />
+
+    -->
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/diet_data_recycler_view"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

@@ -39,7 +39,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     String name,userName,password,retypePassword,phone;
     Button button_sign_up;
     private static final String TAG="SignUpActivity";
-    private static final String BASE_URL="http://1bae0161.ngrok.io/";
+    private static  String BASE_URL;
     Retrofit retrofit;
 
     String pubKey;
@@ -51,12 +51,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        BASE_URL=getResources().getString(R.string.baseurl);
+
         Gson gson=new Gson();
         retrofit= new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
-
         name_sign_up= (EditText) findViewById(R.id.name_sign_up);
         user_name_sign_up= (EditText) findViewById(R.id.user_name_sign_up);
         password_sign_up= (EditText) findViewById(R.id.password_sign_up);

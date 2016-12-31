@@ -18,6 +18,7 @@ import com.dhananjay.erudite.R;
 import com.dhananjay.erudite.VitalSignsReading;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.QueryBuilder;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -59,8 +60,10 @@ public class TemperatureFragment extends Fragment {
             helper= OpenHelperManager.getHelper(getContext(),DatabaseHelper.class);
             dao=helper.getDao();
 
-                vitalSignsReadingList=dao.queryForEq("type",type);
-
+            QueryBuilder<VitalSignsReading,Long> queryBuilder=helper.getDao().queryBuilder();
+            queryBuilder.orderBy("recordedTimestamp",false);
+            queryBuilder.where().eq("type",type);
+            vitalSignsReadingList=queryBuilder.query();
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -48,7 +48,7 @@ import static android.content.ContentValues.TAG;
 public class SyncFragment extends Fragment implements View.OnClickListener, Callback<Result> {
 
     private static final String TAG="SyncFragment";
-    private static final String BASE_URL="http://1bae0161.ngrok.io/";
+    private static  String BASE_URL;
     Retrofit retrofit;
 
     DatabaseHelper helper;
@@ -62,6 +62,7 @@ public class SyncFragment extends Fragment implements View.OnClickListener, Call
     String encoded="";
     int syncSize=0;
     int count=0;
+    String username;
 
 
     public SyncFragment() {
@@ -79,6 +80,9 @@ public class SyncFragment extends Fragment implements View.OnClickListener, Call
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        BASE_URL=getActivity().getResources().getString(R.string.baseurl);
+
 
         buttonSync= (Button) view.findViewById(R.id.button_sync);
         progressBarSync= (ProgressBar) view.findViewById(R.id.progress_sync);
@@ -129,6 +133,7 @@ public class SyncFragment extends Fragment implements View.OnClickListener, Call
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
         publicKeyString=prefs.getString("public_key","not available");
+        username=prefs.getString("user_id","NIL");
 
         try {
             publicKey=loadPublicKey(publicKeyString);
@@ -149,28 +154,31 @@ public class SyncFragment extends Fragment implements View.OnClickListener, Call
 
             for(int i=0;i<vitalSignsReadingList.size();i++){
                 VitalSignsReading readingitem=vitalSignsReadingList.get(i);
-                readingitem.setSyncedWithServer(1);
-                readingitem.setSyncTime(System.currentTimeMillis()/1000);
+                if(readingitem.getUserId().equals(username)){
+                    readingitem.setSyncedWithServer(1);
+                    readingitem.setSyncTime(System.currentTimeMillis()/1000);
 
-                double reading=readingitem.getValue();
-                String readingString=String.valueOf(reading);
-
-
-
-
-                encodedBytes = c1.doFinal(readingString.getBytes());
-                encoded= Base64.encodeToString(encodedBytes, Base64.DEFAULT);
-                Log.d(TAG, "crypto: encoded :"+encoded);
-
-                API api=retrofit.create(API.class);
-                Call<Result> call =api.syncRequest(3,readingitem.getUserId(),readingitem.getRecordedTimestamp(),encoded,readingitem.getType(),readingitem.getSyncedWithServer(),readingitem.getSyncTime());
-                call.enqueue(this);
+                    String reading=readingitem.getValue();
+                    String readingString=String.valueOf(reading);
 
 
-                try {
-                    dao.update(readingitem);
-                } catch (SQLException e) {
-                    e.printStackTrace();
+
+
+                    encodedBytes = c1.doFinal(readingString.getBytes());
+                    encoded= Base64.encodeToString(encodedBytes, Base64.DEFAULT);
+                    Log.d(TAG, "crypto: encoded :"+encoded);
+
+                    API api=retrofit.create(API.class);
+                    Call<Result> call =api.syncRequest(3,readingitem.getUserId(),readingitem.getRecordedTimestamp(),encoded,readingitem.getType(),readingitem.getSyncedWithServer(),readingitem.getSyncTime());
+                    call.enqueue(this);
+
+
+                    try {
+                        dao.update(readingitem);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+
                 }
 
 

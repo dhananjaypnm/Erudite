@@ -13,12 +13,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
+import com.dhananjay.erudite.DietData.DietDataFragment;
 import com.dhananjay.erudite.Map.GMapFragment;
-import com.dhananjay.erudite.MyReports.MonitorFragment;
-import com.dhananjay.erudite.MyReports.MonitorReportFragment;
 import com.dhananjay.erudite.MyReports.ReportsFragment;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
@@ -70,7 +68,7 @@ public class MainActivity extends AppCompatActivity
 
             int count=0;
             for(int i=0;i<10;i++){
-                vitalSignsReadingList.add(new VitalSignsReading(userId,time,50.5,1,0,0));
+                vitalSignsReadingList.add(new VitalSignsReading(userId,time,String.valueOf(50.5),1,0,0));
 
                 List<VitalSignsReading> list=new ArrayList<>();
                 list=dao.queryForEq("recordedTimestamp",time);
@@ -86,7 +84,7 @@ public class MainActivity extends AppCompatActivity
             }
             time+=86400*10+1;
             for(int i=10;i<20;i++){
-                vitalSignsReadingList.add(new VitalSignsReading(userId,time,50.5,2,0,0));
+                vitalSignsReadingList.add(new VitalSignsReading(userId,time,String.valueOf(50.5),2,0,0));
 
                 List<VitalSignsReading> list=new ArrayList<>();
                 list=dao.queryForEq("recordedTimestamp",time);
@@ -102,7 +100,7 @@ public class MainActivity extends AppCompatActivity
             }
             time=time+86400*10+1;
             for(int i=20;i<30;i++){
-                vitalSignsReadingList.add(new VitalSignsReading(userId,time,50.5,3,0,0));
+                vitalSignsReadingList.add(new VitalSignsReading(userId,time,String.valueOf(50.5),3,0,0));
 
                 List<VitalSignsReading> list=new ArrayList<>();
                 list=dao.queryForEq("recordedTimestamp",time);
@@ -118,7 +116,7 @@ public class MainActivity extends AppCompatActivity
             }
             time=time+86400*10+1;
             for(int i=30;i<40;i++){
-                vitalSignsReadingList.add(new VitalSignsReading(userId,time,50.5,4,0,0));
+                vitalSignsReadingList.add(new VitalSignsReading(userId,time,String.valueOf(50.5),4,0,0));
 
                 List<VitalSignsReading> list=new ArrayList<>();
                 list=dao.queryForEq("recordedTimestamp",time);
@@ -134,7 +132,7 @@ public class MainActivity extends AppCompatActivity
             }
             time=time+86400*10+1;
             for(int i=40;i<50;i++){
-                vitalSignsReadingList.add(new VitalSignsReading("notme",time,50.5,1,0,0));
+                vitalSignsReadingList.add(new VitalSignsReading("notme",time,String.valueOf(50.5),1,0,0));
 
                 List<VitalSignsReading> list=new ArrayList<>();
                 list=dao.queryForEq("recordedTimestamp",time);
@@ -148,7 +146,7 @@ public class MainActivity extends AppCompatActivity
             }
             time+=86400*10+1;
             for(int i=50;i<60;i++){
-                vitalSignsReadingList.add(new VitalSignsReading("notme",time,50.5,2,0,0));
+                vitalSignsReadingList.add(new VitalSignsReading("notme",time,String.valueOf(50.5),2,0,0));
 
                 List<VitalSignsReading> list=new ArrayList<>();
                 list=dao.queryForEq("recordedTimestamp",time);
@@ -162,7 +160,7 @@ public class MainActivity extends AppCompatActivity
             }
             time=time+86400*10+1;
             for(int i=60;i<70;i++){
-                vitalSignsReadingList.add(new VitalSignsReading("notme",time,50.5,3,0,0));
+                vitalSignsReadingList.add(new VitalSignsReading("notme",time,String.valueOf(50.5),3,0,0));
 
                 List<VitalSignsReading> list=new ArrayList<>();
                 list=dao.queryForEq("recordedTimestamp",time);
@@ -175,7 +173,7 @@ public class MainActivity extends AppCompatActivity
             }
             time=time+86400*10+1;
             for(int i=70;i<80;i++){
-                vitalSignsReadingList.add(new VitalSignsReading("notme",time,50.5,4,0,0));
+                vitalSignsReadingList.add(new VitalSignsReading("notme",time,String.valueOf(50.5),4,0,0));
 
                 List<VitalSignsReading> list=new ArrayList<>();
                 list=dao.queryForEq("recordedTimestamp",time);
@@ -231,6 +229,11 @@ public class MainActivity extends AppCompatActivity
             getSupportActionBar().setTitle("Request Monitor");
 
         } else if (id == R.id.nav_diet) {
+            DietDataFragment dietDataFragment=new DietDataFragment();
+            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,dietDataFragment);
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("Diet Data");
 
         } else if (id == R.id.nav_map) {
             GMapFragment gMapFragment=new GMapFragment();
@@ -276,14 +279,6 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    public void grantedPermission(View view) {
-        MonitorReportFragment monitorReportFragment=new MonitorReportFragment();
-        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container,monitorReportFragment);
-        fragmentTransaction.commit();
-        getSupportActionBar().setTitle("Monitor Reports");
 
-
-    }
 }
 //freepik.com

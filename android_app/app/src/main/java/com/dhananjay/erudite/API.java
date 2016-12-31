@@ -10,7 +10,7 @@ public interface API {
 
     @FormUrlEncoded()
     @POST("request.php")
-    Call<Result> loginAuth(
+    Call<LoginResult> loginAuth(
             @Field("request_code") int requestCode,
             @Field("user_name") String userName,
             @Field("password") String password
@@ -42,10 +42,10 @@ public interface API {
     );
     @FormUrlEncoded()
     @POST("request.php")
-    Call<Result> monitorRequest(
+    Call<TargetVitalSignsReading> monitorRequest(
             @Field("request_code") int requestCode,
-            @Field("requester_user_id") String requesterUserId,
-            @Field("requested_user_id") String requested
+            @Field("monitor_user_id") String requesterUserId,
+            @Field("target_user_id") String requested
     );
 
 }

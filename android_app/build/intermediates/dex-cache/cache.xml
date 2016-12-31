@@ -25,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="aa22dfb754f1b15b7c6996844ce196e605c477f5">
+        sha1="459af3d89fbd40842487a569b100f477bbbc481d">
         <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_8963b6d28459b292469969aa41525f79e9fe233e/classes.dex" />
     </item>
     <item
@@ -133,7 +133,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="298b5909febb637f27ead6d5d6cb91320a251219">
+        sha1="d07bec834dedb2106d6427a61ddbd7ef2ecfdf14">
         <dex dex="/home/dhananjay/AndroidStudioProjects/Erudite/android_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_7a8d2cff9c2538dc5d5ed2b7379d8ddc914f523d/classes.dex" />
     </item>
     <item
