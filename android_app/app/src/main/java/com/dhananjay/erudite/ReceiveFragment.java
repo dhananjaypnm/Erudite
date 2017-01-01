@@ -19,12 +19,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.QueryBuilder;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -41,7 +46,7 @@ import java.util.UUID;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ReceiveFragment extends Fragment implements View.OnClickListener {
+public class ReceiveFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private static final String TAG="ReceiveFragment";
     DatabaseHelper helper;
@@ -50,7 +55,9 @@ public class ReceiveFragment extends Fragment implements View.OnClickListener {
     String userId;
     Button buttonReceive,scan,add;
     TextView valueReceive,averageReceive;
-
+    Spinner spinner;
+EditText manual;
+    Button manualAdd;
     BluetoothAdapter BTAdapter;
 
     List<Double> average;
@@ -78,7 +85,20 @@ public class ReceiveFragment extends Fragment implements View.OnClickListener {
         valueReceive= (TextView) view.findViewById(R.id.value_receive);
         scan= (Button) view.findViewById(R.id.button_scan);
         add= (Button) view.findViewById(R.id.button_add);
+        spinner= (Spinner) view.findViewById(R.id.typeSpinner);
+        manual= (EditText) view.findViewById(R.id.manual);
+        manualAdd= (Button) view.findViewById(R.id.manualadd);
 
+
+
+        List<String> stringList=new ArrayList<>();
+        stringList.add("sugar_levels");
+        stringList.add("blood_pressure");
+        stringList.add("pulse_rate");
+        stringList.add("temperature");
+
+        ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(getContext(),R.layout.support_simple_spinner_dropdown_item,stringList);
+        spinner.setAdapter(arrayAdapter);
 
         helper= OpenHelperManager.getHelper(getContext(),DatabaseHelper.class);
         try {
@@ -93,17 +113,58 @@ public class ReceiveFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 Double val=0.0;
-                val=Double.parseDouble(values[1]);
-                int type=1;
+               int l= values.length;
+                if(l>=1){
+                    Log.d(TAG, "onClick: "+values[0]);
+                    Log.d(TAG, "onClick: "+values[1]);
+                    val=Double.parseDouble(values[1]);
+
+                }else{
+                    Log.d(TAG, "onClick: else statement");
+                }
+                int type=spinner.getSelectedItemPosition();
                 long currTime=System.currentTimeMillis()/1000;
-                VitalSignsReading vitalSignReading=new VitalSignsReading(userId,currTime,String.valueOf(val),type,0,0);
+                VitalSignsReading vitalSignReading=new VitalSignsReading(userId,currTime,String.valueOf(val),type+1,0,0);
                 try {
                     valueReceive.setText("Received value: "+val);
 
-                    dao.createIfNotExists(vitalSignReading);
-                    Toast.makeText(getContext(), "Reading Added", Toast.LENGTH_SHORT).show();
-                    Log.d(TAG, "onClick: reading added "+vitalSignReading.value);
-                    Log.d(TAG, "onClick: "+vitalSignReading.value);
+
+                    
+                    List<VitalSignsReading> checkingList=new ArrayList<VitalSignsReading>();
+                    QueryBuilder<VitalSignsReading,Long> queryBuilder=helper.getDao().queryBuilder();
+                    queryBuilder.where().eq("type",type);
+                    queryBuilder.where().eq("recordedTimestamp",currTime);
+                    checkingList=queryBuilder.query(); 
+                    if(checkingList.size()==0){
+                        VitalSignsReading reading=dao.createIfNotExists(vitalSignReading);
+                        Toast.makeText(getContext(), "added", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "onClick: inserted"+reading.getValue());
+                        Toast.makeText(getContext(), "Reading Added", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "onClick: reading added "+vitalSignReading.value);
+                        Log.d(TAG, "onClick: "+vitalSignReading.value);
+                    }else {
+                        Log.d(TAG, "onClick: already added");
+                    }
+                    
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        manualAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String val=manual.getText().toString();
+                int type=spinner.getSelectedItemPosition();
+
+                long currTime=System.currentTimeMillis()/1000;
+                VitalSignsReading vitalSignReading=new VitalSignsReading(userId,currTime,val,type+1,0,0);
+
+                try {
+                    VitalSignsReading reading=dao.createIfNotExists(vitalSignReading);
+                    Log.d(TAG, "onClick: inserted"+reading.getValue());
+                    Toast.makeText(getContext(), "added", Toast.LENGTH_SHORT).show();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -175,6 +236,17 @@ public class ReceiveFragment extends Fragment implements View.OnClickListener {
 
     }
      BluetoothSocket btsoccet;
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
     public class ConnectThread extends Thread{
          BluetoothSocket bTSocket;
        BluetoothDevice bTDevice;
@@ -272,22 +344,29 @@ public class ReceiveFragment extends Fragment implements View.OnClickListener {
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                 Log.d(TAG, "onReceive: found devices");
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                btdevice=device;
+                Log.d(TAG, "onReceive: "+device.getName());
+                if(device.getName().equals("HC-05")){
+                    Log.d(TAG, "onReceive: hc 05 detected");
+                    btdevice=device;
               /* UUID uuid=device.getUuids()[0].getUuid();
                 btdevice=device;
                 btuuid=uuid;
                 Log.d(TAG, "onReceive: "+uuid);
                 Toast.makeText(context, "uuid :"+uuid, Toast.LENGTH_SHORT).show();*/
-                // Create a new device item
-                Toast.makeText(context, "onReceive: "+device.getAddress(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(context, "onReceive: "+device.getName(), Toast.LENGTH_SHORT).show();
-                Log.d(TAG, "onReceive: "+device.getAddress());
-                Log.d(TAG, "onReceive: "+device.getName());
-                Log.d(TAG, "onReceive: "+device.getUuids());
-                DeviceItem newDevice = new DeviceItem(device.getName(), device.getAddress(), "false");
-                // Add it to our adapter
-                deviceItemList.add(newDevice);
-                Log.d(TAG, "onReceive: device added");
+                    // Create a new device item
+                    Toast.makeText(context, "onReceive: "+device.getAddress(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "onReceive: "+device.getName(), Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "onReceive: "+device.getAddress());
+                    Log.d(TAG, "onReceive: "+device.getName());
+                    Log.d(TAG, "onReceive: "+device.getUuids());
+                    DeviceItem newDevice = new DeviceItem(device.getName(), device.getAddress(), "false");
+                    // Add it to our adapter
+                    deviceItemList.add(newDevice);
+                    Log.d(TAG, "onReceive: device added");
+                }else{
+                    Log.d(TAG, "onReceive: hc 05 not detected");
+                }
+               
             }
         }
     };

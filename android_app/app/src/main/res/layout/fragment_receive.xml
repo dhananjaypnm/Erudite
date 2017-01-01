@@ -18,6 +18,7 @@
         android:id="@+id/button_receive"
         android:layout_height="wrap_content"
         android:text="Receive" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_gravity="center"
@@ -34,6 +35,29 @@
         android:layout_height="wrap_content"
         android:text="Value" />
 
+    <Spinner
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:id="@+id/typeSpinner"
+        android:layout_height="wrap_content">
+
+    </Spinner>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/manual"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/manualadd"
+            android:text="manual"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"

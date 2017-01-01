@@ -76,7 +76,6 @@ int flag=0;
             e.printStackTrace();
         }
 
-
         RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.sugar_level_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

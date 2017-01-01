@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity
 
             int count=0;
             for(int i=0;i<10;i++){
-                vitalSignsReadingList.add(new VitalSignsReading(userId,time,String.valueOf(50.5),1,0,0));
+                vitalSignsReadingList.add(new VitalSignsReading(userId,time,String.valueOf(5.5),1,0,0));
 
                 List<VitalSignsReading> list=new ArrayList<>();
                 list=dao.queryForEq("recordedTimestamp",time);
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity
             }
             time+=86400*10+1;
             for(int i=10;i<20;i++){
-                vitalSignsReadingList.add(new VitalSignsReading(userId,time,String.valueOf(50.5),2,0,0));
+                vitalSignsReadingList.add(new VitalSignsReading(userId,time,"130/80",2,0,0));
 
                 List<VitalSignsReading> list=new ArrayList<>();
                 list=dao.queryForEq("recordedTimestamp",time);
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity
             }
             time=time+86400*10+1;
             for(int i=20;i<30;i++){
-                vitalSignsReadingList.add(new VitalSignsReading(userId,time,String.valueOf(50.5),3,0,0));
+                vitalSignsReadingList.add(new VitalSignsReading(userId,time,String.valueOf(80),3,0,0));
 
                 List<VitalSignsReading> list=new ArrayList<>();
                 list=dao.queryForEq("recordedTimestamp",time);
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity
             }
             time=time+86400*10+1;
             for(int i=30;i<40;i++){
-                vitalSignsReadingList.add(new VitalSignsReading(userId,time,String.valueOf(50.5),4,0,0));
+                vitalSignsReadingList.add(new VitalSignsReading(userId,time,String.valueOf(36.7),4,0,0));
 
                 List<VitalSignsReading> list=new ArrayList<>();
                 list=dao.queryForEq("recordedTimestamp",time);
@@ -130,61 +130,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 time=time-86400;
             }
-            time=time+86400*10+1;
-            for(int i=40;i<50;i++){
-                vitalSignsReadingList.add(new VitalSignsReading("notme",time,String.valueOf(50.5),1,0,0));
 
-                List<VitalSignsReading> list=new ArrayList<>();
-                list=dao.queryForEq("recordedTimestamp",time);
-                if(list.size()==0){
-                    int id= dao.create(vitalSignsReadingList.get(i));
-                    Log.d(TAG, "onCreate:inserted id = "+id);
-                    Log.d(TAG, "onCreate: "+count+++" "+i +" "+1);
-
-                }
-                time=time-86400;
-            }
-            time+=86400*10+1;
-            for(int i=50;i<60;i++){
-                vitalSignsReadingList.add(new VitalSignsReading("notme",time,String.valueOf(50.5),2,0,0));
-
-                List<VitalSignsReading> list=new ArrayList<>();
-                list=dao.queryForEq("recordedTimestamp",time);
-                if(list.size()==0){
-                    int id= dao.create(vitalSignsReadingList.get(i));
-                    Log.d(TAG, "onCreate:inserted id = "+id);
-                    Log.d(TAG, "onCreate: "+count+++" "+i+" "+2);
-
-                }
-                time=time-86400;
-            }
-            time=time+86400*10+1;
-            for(int i=60;i<70;i++){
-                vitalSignsReadingList.add(new VitalSignsReading("notme",time,String.valueOf(50.5),3,0,0));
-
-                List<VitalSignsReading> list=new ArrayList<>();
-                list=dao.queryForEq("recordedTimestamp",time);
-                if(list.size()==0){
-                    int id= dao.create(vitalSignsReadingList.get(i));
-                    Log.d(TAG, "onCreate:inserted id = "+id);
-                    Log.d(TAG, "onCreate: "+count+++" "+i+" "+3);
-                }
-                time=time-86400;
-            }
-            time=time+86400*10+1;
-            for(int i=70;i<80;i++){
-                vitalSignsReadingList.add(new VitalSignsReading("notme",time,String.valueOf(50.5),4,0,0));
-
-                List<VitalSignsReading> list=new ArrayList<>();
-                list=dao.queryForEq("recordedTimestamp",time);
-                if(list.size()==0){
-                    int id= dao.create(vitalSignsReadingList.get(i));
-                    Log.d(TAG, "onCreate:inserted id = ");
-                    Log.d(TAG, "onCreate: "+count+++" "+i+" "+4);
-
-                }
-                time=time-86400;
-            }
 
             dao.queryForAll();
 

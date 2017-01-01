@@ -1,13 +1,47 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dhananjay.eruditet4.ReceiveFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    android:orientation="vertical"
+    tools:context="com.dhananjay.eruditet4.Reading.ReceiveFragment">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:id="@+id/button_scan"
+        android:layout_height="wrap_content"
+        android:text="scan" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:id="@+id/button_receive"
+        android:layout_height="wrap_content"
+        android:text="Receive" />
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        android:text="Reading:" />
 
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:textSize="20dp"
+        android:id="@+id/value_receive"
+        android:layout_height="wrap_content"
+        android:text="Value" />
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:id="@+id/button_add"
+        android:layout_height="wrap_content"
+        android:text="Add" />
+
+</LinearLayout>

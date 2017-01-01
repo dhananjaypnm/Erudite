@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import java.io.FileOutputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -67,6 +69,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
          userName=user_name_login.getText().toString();
         password=password_login.getText().toString();
+        password=md5(password);
         API api=retrofit.create(API.class);
         Call<LoginResult> call =api.loginAuth(2,userName,password);
         call.enqueue(this);
@@ -100,5 +103,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onFailure(Call<LoginResult> call, Throwable t) {
         Log.d(TAG, "onFailure: failed"+t);
         Toast.makeText(this,"Failed!"+t,Toast.LENGTH_LONG).show();
+    }
+
+    public String md5(String s) {
+        try {
+            // Create MD5 Hash
+            MessageDigest digest = java.security.MessageDigest.getInstance("MD5");
+            digest.update(s.getBytes());
+            byte messageDigest[] = digest.digest();
+
+            // Create Hex String
+            StringBuffer hexString = new StringBuffer();
+            for (int i=0; i<messageDigest.length; i++)
+                hexString.append(Integer.toHexString(0xFF & messageDigest[i]));
+            return hexString.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }

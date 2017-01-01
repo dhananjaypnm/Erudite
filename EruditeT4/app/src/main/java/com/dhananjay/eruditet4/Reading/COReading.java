@@ -8,10 +8,14 @@ import com.j256.ormlite.field.DatabaseField;
 
 public class COReading {
 
-    COReading(long recordedTimestamp,double value){
+    COReading(){}
+
+    COReading(long recordedTimestamp,String value){
         this.recordedTimestamp=recordedTimestamp;
         this.value=value;
     }
+
+
 
     @DatabaseField(generatedId = true)
     long id;
@@ -20,6 +24,6 @@ public class COReading {
     long recordedTimestamp;
 
     @DatabaseField
-    double value;
+    String value;
 
 }

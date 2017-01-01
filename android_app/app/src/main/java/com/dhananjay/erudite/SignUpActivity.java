@@ -19,6 +19,8 @@ import java.security.Key;
 import java.security.KeyFactory;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.spec.PKCS8EncodedKeySpec;
@@ -123,6 +125,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
 
         if(password.equals(retypePassword)){
+
+            password=md5(password);
+
             API api=retrofit.create(API.class);
             Call<Result> call =api.signUpRequest(1,name,userName,password,phone,pubKey,privKey);
             call.enqueue(this);
@@ -213,5 +218,24 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         Log.d(TAG, "onFailure: failed"+t);
         Toast.makeText(this,"Failed! Make sure you have proper internet connection",Toast.LENGTH_LONG).show();
 
+    }
+
+    public String md5(String s) {
+        try {
+            // Create MD5 Hash
+            MessageDigest digest = java.security.MessageDigest.getInstance("MD5");
+            digest.update(s.getBytes());
+            byte messageDigest[] = digest.digest();
+
+            // Create Hex String
+            StringBuffer hexString = new StringBuffer();
+            for (int i=0; i<messageDigest.length; i++)
+                hexString.append(Integer.toHexString(0xFF & messageDigest[i]));
+            return hexString.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }
